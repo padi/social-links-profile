@@ -8,27 +8,160 @@
   
   <title>Frontend Mentor | Social links profile</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    :root {
+      --green: hsl(75, 94%, 57%);
+      --white: hsl(0, 0%, 100%);
+      --grey-700: hsl(0, 0%, 20%);
+      --grey-800: hsl(0, 0%, 12%);
+      --grey-900: hsl(0, 0%, 8%);
+      --card-radius: 15px;
+    }
+
+    .inter-400 {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+    }
+
+    .inter-600 {
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+    }
+
+    .inter-700 {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+    }
+
+    body, main, div, img {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    body {
+      letter-spacing: 0;
+      /* todo: what are these for?*/
+      font-optical-sizing: auto;
+      font-style: normal;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--white);
+      font-size: 14px;
+
+      background: var(--grey-900);
+
+      display:flex;
+      justify-content:center;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .card{
+      background: var(--grey-800);
+      width: 384px;
+      height: 610px;
+      padding: 40px;
+      border-radius: var(--card-radius);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      .user-avatar {
+        height: 90px;
+        width: 90px;
+        border-radius: 99px;
+        margin-bottom: 30px;
+      }
+
+      .user-info{
+        height: 100px;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        text-align: center;
+
+        .name {
+          font-weight: 700;
+          font-size: clamp(20px, 4.8vh, 24px);
+        }
+        .city {
+          font-weight: 700;
+          font-size: clamp(12px, 4.8vh, 14px);
+          color: var(--green);
+        }
+        .push-down{
+          margin-top: auto;
+        }
+      }
+
+      .push-down{
+        margin-top: auto;
+      }
+      .social-links{
+        display:flex;
+        flex-direction: column;
+        height: 290px;
+        width: 100%;
+        justify-content: space-between;
+
+        .button {
+          all: unset; /* Remove all user-agent styles for a tag */
+
+          background-color: var(--grey-700);
+          border-radius: 10px; /* Round the corners */
+          padding: 10px 20px;
+          cursor: pointer;
+
+          color: var(--white);
+          font-weight: 600;
+          text-align:center;
+
+          /* todo: why does the font push the height??? */
+          height: 25px;
+
+          &:hover {
+            background-color: var(--green);
+            color: var(--grey-900);
+          }
+        }
+      }
+    }
   </style>
 </head>
 <body>
 
-  Jessica Randall
-  London, United Kingdom
-  "Front-end developer and avid reader."
+    <main class="card">
+      <img class="user-avatar" src="./assets/images/avatar-jessica.jpeg" alt="Photo of Jessica Randall">
 
-  GitHub
-  Frontend Mentor
-  LinkedIn
-  Twitter
-  Instagram
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <div class="user-info">
+        <span class="name">
+          Jessica Randall
+        </span>
+        <span class="city">
+          London, United Kingdom
+        </span>
+        <span class="desc push-down">
+          "Front-end developer and avid reader."
+        </span>
+      </div>
+
+      <!-- todo: change this ul and li with list-style:none -->
+      <div class="social-links push-down">
+        <a class="button" href="#" target="_blank">GitHub</a>
+        <a class="button" href="#" target="_blank">Frontend Mentor</a>
+        <a class="button" href="#" target="_blank">LinkedIn</a>
+        <a class="button" href="#" target="_blank">Twitter</a>
+        <a class="button" href="#" target="_blank">Instagram</a>
+      </div>
+    </main>
 </body>
 </html>
