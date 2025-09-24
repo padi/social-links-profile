@@ -34,15 +34,19 @@
       font-weight: 700;
     }
 
+    /* css reset for some elements */
     body, main, div, img {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      line-height: 1.5;
-      font-weight: 400;
     }
 
     body {
+      font-family: "Inter", sans-serif;
+      color: var(--white);
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: 400;
       letter-spacing: 0;
       /* todo: what are these for?*/
       font-optical-sizing: auto;
@@ -50,23 +54,21 @@
     }
 
     body {
-      font-family: "Inter", sans-serif;
-      color: var(--white);
-      font-size: 14px;
-
       background: var(--grey-900);
 
       display:flex;
       justify-content:center;
       min-height: 100vh;
       align-items: center;
+
+      padding: 25px;
     }
 
     .card{
       background: var(--grey-800);
       width: 384px;
-      height: 610px;
-      padding: 40px;
+      height: clamp(580px, 122vw, 610px);
+      padding: clamp(25px, 6.5vw,40px);
       border-radius: var(--card-radius);
 
       display: flex;
@@ -75,9 +77,10 @@
       align-items: center;
 
       .user-avatar {
-        height: 90px;
-        width: 90px;
-        border-radius: 99px;
+        --avatar-size: 90px;
+        height: var(--avatar-size);
+        width: var(--avatar-size);
+        border-radius: var(--avatar-size);
         margin-bottom: 30px;
       }
 
@@ -90,12 +93,12 @@
         text-align: center;
 
         .name {
-          font-weight: 700;
-          font-size: clamp(20px, 4.8vh, 24px);
+          font-weight: 600;
+          font-size: 24px;
         }
         .city {
           font-weight: 700;
-          font-size: clamp(12px, 4.8vh, 14px);
+          font-size: 14px;
           color: var(--green);
         }
         .push-down{
@@ -117,16 +120,14 @@
           all: unset; /* Remove all user-agent styles for a tag */
 
           background-color: var(--grey-700);
-          border-radius: 10px; /* Round the corners */
-          padding: 10px 20px;
+          border-radius: 10px;
           cursor: pointer;
 
           color: var(--white);
           font-weight: 600;
           text-align:center;
 
-          /* todo: why does the font push the height??? */
-          height: 25px;
+          line-height: 3.3;
 
           &:hover {
             background-color: var(--green);
